@@ -1,0 +1,205 @@
+---
+# See https://fontawesome.com/search for icons options
+
+title: "Domácí serverováníčko"
+subtitle: "Homer"
+# documentTitle: "Welcome" # Customize the browser tab text
+logo: "logo.png"
+
+header: true # Set to false to hide the header
+# Optional: Different hotkey for search, defaults to "/"
+# hotkey:
+#   search: "Shift"
+footer: '<p>Created with <span class="has-text-danger">❤️</span> with <a href="https://bulma.io/">bulma</a>, <a href="https://vuejs.org/">vuejs</a> & <a href="https://fontawesome.com/">font awesome</a> // Fork me on <a href="https://github.com/bastienwirtz/homer"><i class="fab fa-github-alt"></i></a></p>' # set false if you want to hide it.
+
+columns: "3" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example).
+                        # You should set it to true when using an authentication proxy, it also reloads the page when a redirection is detected when checking connectivity.
+
+# Optional: Proxy / hosting option
+proxy:
+  useCredentials: false # send cookies & authorization headers when fetching service specific data. Set to `true` if you use an authentication proxy. Can be overrided on service level. 
+  headers: # send custom headers when fetching service specific data. Can also be set on a service level.
+    Test: "Example"
+    Test1: "Example1"
+
+
+# Set the default layout and color scheme
+defaults:
+  layout: columns # Either 'columns', or 'list'
+  colorTheme: auto # One of 'auto', 'light', or 'dark'
+
+# Optional theming
+theme: default # 'default' or one of the themes available in 'src/assets/themes'.
+
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#424242"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link: "#3273dc"
+    link-hover: "#363636"
+    background-image: "/assets/your/light/bg.png" # prefix with your sub subpath if any (ex: /homer/assets/...)
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#3273dc"
+    link-hover: "#ffdd57"
+    background-image: "/assets/your/dark/bg.png" # prefix with your sub subpath if any (ex: /homer/assets/...)
+
+message:
+  # url: "https://<my-api-endpoint>" # Can fetch information from an endpoint to override value below.
+  # mapping: # allows to map fields from the remote format to the one expected by Homer
+  #   title: 'id' # use value from field 'id' as title
+  #   content: 'value' # value from field 'value' as content
+  # refreshInterval: 10000 # Optional: time interval to refresh message
+  #
+  # Real example using chucknorris.io for showing Chuck Norris facts as messages:
+  # Real example using chucknorris.io for showing Chuck Norris facts as messages:
+   url: https://api.chucknorris.io/jokes/random
+   style: "is-warning"
+   title: "Chuckův citát dne:"
+   mapping:
+      content: 'value'
+   refreshInterval: 1000000
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  - name: "Homer"
+    icon: "fab fa-github"
+    url: "https://github.com/bastienwirtz/homer"
+    target: "_blank" # optional html tag target attribute
+  - name: "Selfhosted"
+    icon: "fab fa-github"
+    url: "https://github.com/awesome-selfhosted/awesome-selfhosted"
+  # this will link to a second homer page that will load config from page2.yml and keep default config values as in config.yml file
+  # see url field and assets/page.yml used in this example:
+  - name: "Discord"
+    icon: "fa-brands fa-discord"
+    url: "https://discord.com"
+  - name: "Icons"
+    icon: "fa-solid fa-icons"
+    url: "https://github.com/homarr-labs/dashboard-icons/blob/main/ICONS.md"
+  - name: "Kontejnery"
+    icon: "fa-solid fa-box-open"
+    url: "https://docs.linuxserver.io/images/"
+
+  - name: "Second Page"
+    icon: "fas fa-file-alt"
+    url: "#page2"
+
+# Services
+# First level array represents a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "Media"
+    icon: "fa-solid fa-photo-film"
+    # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
+    # logo: "path/to/logo"
+    # class: "highlight-purple" # Optional css class to add on the service group. 
+    items:
+      - name: "Jellyfin"
+        logo: "assets/icons/jellyfin.png"
+        subtitle: "Filmíky a serialy zde"
+        tag: "app"
+        url: "http://jellyfin.local"
+        target: "_blank"
+
+      - name: "Sonarr"
+        logo: "assets/icons/sonarr.webp"
+        subtitle: "Shows tracker"
+        tag: "app"
+        url: "http://sonarr.local/"
+
+      - name: "Radarr"
+        logo: "assets/icons/radarr.webp"
+        subtitle: "Movies tracker"
+        tag: "app"
+        url: "http://radarr.local/"
+
+      - name: "Readarr"
+        logo: "assets/icons/readarr.webp"
+        subtitle: "Books tracker"
+        tag: "app"
+        url: "http://readarr.local/"
+
+      - name: "Prowlarr"
+        logo: "assets/icons/prowlarr.webp"
+        subtitle: "Index manager"
+        tag: "app"
+        url: "http://prowlarr.local/"
+
+      - name: "qBittorrent"
+        logo: "assets/icons/qbittorrent.webp"
+        subtitle: "Open-source torrenting software"
+        tag: "app"
+        url: "http://torrrent.local/"
+
+      - name: "Bazarr"
+        logo: "assets/icons/bazarr.webp"
+        subtitle: "Titulky"
+        tag: "app"
+        url: "http://bazarr.local/"
+
+
+
+  - name: "Nastavení"
+    icon: "fa-solid fa-gear"
+    items:
+      - name: "Nginx proxy manager"
+        logo: "assets/icons/proxy.webp"
+        subtitle: "Reverse Proxy manager" # optional, if no subtitle is defined, PiHole statistics will be shown
+        tag: "other"
+        url: "http://proxy.local"
+
+      - name: "Pi-hole"
+        logo: "assets/icons/pihole.697x1024.png"
+        subtitle: "DNS / Ad blocking" # optional, if no subtitle is defined, PiHole statistics will be shown
+        tag: "other"
+        url: "http://pihole.local/admin"
+        type: "PiHole" # optional, loads a specific component that provides extra features. MUST MATCH a file name (without file extension) available in `src/components/services`
+        target: "_blank" # optional html a tag target attribute
+        apikey: "880de7e32e960de2880b887ad34e4388b3a3a45b1a64d6f1fb95e11a2cf217e1"
+
+      - name: "Router"
+        logo: "assets/icons/tp-link.webp"
+        subtitle: "Nastavení routeru"
+        tag: "other"
+        url: "http://router.local"
+
+      - name: "Open Media Vault"
+        logo: "assets/icons/openmediavault.webp"
+        subtitle: "NAS"
+        tag: "other"
+        url: "http://omv.local"
+
+      - name: "Maria DB"
+        logo: "assets/icons/mariadb.webp"
+        subtitle: "DB Edit"
+        tag: "other"
+        url: "http://myphpadmin.local"
+
+  - name: "Gadget"
+    icon: "fa-solid fa-rocket"
+    items:
+      - name: "Docházka"
+        logo: "assets/icons/enclosed-light.webp"
+        subtitle: "Docházkový systém" # optional, if no subtitle is defined, PiHole statistics will be shown
+        tag: "other"
+        url: "http://dochazka.local/login"
+
