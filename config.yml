@@ -183,8 +183,6 @@ services:
           label: "Ping"
           format: "{0} ms"
 
-
-
   - name: "Nastavení"
     icon: "fa-solid fa-gear"
     items:
