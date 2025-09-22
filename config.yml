@@ -109,9 +109,6 @@ links:
 services:
   - name: "Media"
     icon: "fa-solid fa-photo-film"
-    # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
-    # logo: "path/to/logo"
-    # class: "highlight-purple" # Optional css class to add on the service group. 
     items:
       - name: "Jellyfin"
         logo: "assets/icons/jellyfin.png"
@@ -159,17 +156,11 @@ services:
   - name: "Monitoring" # Nová skupina pro monitoring
     icon: "fa-solid fa-chart-line"
     items:
-      - name: "Internet Monitor"
-        logo: "assets/icons/speedtest.png" # Nebo použij ikonu
-        icon: "fa-solid fa-wifi" # Alternativa k logu
-        subtitle: "Monitoring kvality připojení"
-        tag: "monitoring"
-        url: "http://192.168.0.208:5000"
-
+      - name: Internet Monitor
+        subtitle: Měření kvality připojení
+        url: "http://192.168.0.208:5001"   # uprav na port, kde běží tvoje appka
+        logo: "assets/tools/internet-monitor.png"  # uprav cestu/ikonku
         target: "_blank"
-        # Pokud chceš ping monitoring, použij tento typ:
-        type: "Ping"
-        method: "HEAD"
 
   - name: "Nastavení"
     icon: "fa-solid fa-gear"
