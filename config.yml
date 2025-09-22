@@ -156,32 +156,20 @@ services:
         tag: "app"
         url: "http://bazarr.local/"
 
-  - name: "Internet Monitor"
-    logo: "fas fa-wifi"
-    subtitle: "Monitoring kvality připojení"
-    tag: "monitoring"
-    url: "http://192.168.0.208:5000"
-    target: "_blank"
-    # Volitelně můžete přidat endpoint pro zobrazení stavu přímo v Homeru
-    endpoint: "http://192.168.0.208:5000/api/status"
-    type: "Ping"
-    # Nebo vlastní endpoint parser:
-    method: "GET"
-    headers:
-      Accept: "application/json"
-    body:
-      format: "json"
-      # Můžete zobrazit různé metriky
-      fields:
-        - field: "download"
-          label: "Download"
-          format: "{0} Mbps"
-        - field: "upload" 
-          label: "Upload"
-          format: "{0} Mbps"
-        - field: "ping"
-          label: "Ping"
-          format: "{0} ms"
+  - name: "Monitoring" # Nová skupina pro monitoring
+    icon: "fa-solid fa-chart-line"
+    items:
+      - name: "Internet Monitor"
+        logo: "assets/icons/speedtest.png" # Nebo použij ikonu
+        icon: "fa-solid fa-wifi" # Alternativa k logu
+        subtitle: "Monitoring kvality připojení"
+        tag: "monitoring"
+        url: "http://192.168.0.208:5000"
+
+        target: "_blank"
+        # Pokud chceš ping monitoring, použij tento typ:
+        type: "Ping"
+        method: "HEAD"
 
   - name: "Nastavení"
     icon: "fa-solid fa-gear"
