@@ -161,6 +161,8 @@ services:
         url: "http://192.168.0.208:5001"   # uprav na port, kde běží tvoje appka
         logo: "assets/tools/internet-monitor.png"  # uprav cestu/ikonku
         target: "_blank"
+        
+
 
   - name: "Nastavení"
     icon: "fa-solid fa-gear"
@@ -198,12 +200,19 @@ services:
         tag: "other"
         url: "http://myphpadmin.local"
 
-  - name: "Gadget"
+  - name: "Utility"
     icon: "fa-solid fa-rocket"
     items:
       - name: "Docházka"
-        logo: "assets/icons/enclosed-light.webp"
-        subtitle: "Docházkový systém" # optional, if no subtitle is defined, PiHole statistics will be shown
+        logo: "assets/icons/e7928216.png"
+        subtitle: "Docházkový systém" 
         tag: "other"
         url: "http://dochazka.local/login"
+
+      - name: "VSQ Generator"
+        logo: "assets/tools/vsq-logo.png"
+        subtitle: "Excel to CANoe Converter"
+        tag: "app"
+        url: "http://192.168.0.208:5002"
+        target: "_blank"
 
