@@ -62,21 +62,16 @@ colors:
     link-hover: "#ffdd57"
     background-image: "/assets/your/dark/bg.png" # prefix with your sub subpath if any (ex: /homer/assets/...)
 
+
 message:
-  # url: "https://<my-api-endpoint>" # Can fetch information from an endpoint to override value below.
-  # mapping: # allows to map fields from the remote format to the one expected by Homer
-  #   title: 'id' # use value from field 'id' as title
-  #   content: 'value' # value from field 'value' as content
-  # refreshInterval: 10000 # Optional: time interval to refresh message
-  #
-  # Real example using chucknorris.io for showing Chuck Norris facts as messages:
-  # Real example using chucknorris.io for showing Chuck Norris facts as messages:
-   url: https://api.chucknorris.io/jokes/random
-   style: "is-warning"
-   title: "Chuckův citát dne:"
-   mapping:
-      content: 'value'
-   refreshInterval: 1000000
+  url: "http://192.168.0.208:5001/api/homer-status"
+  style: "is-info"
+  title: "Stav internetového připojení"
+  mapping:
+    title: 'title'
+    content: 'content'  
+    style: 'style'
+  refreshInterval: 30000
 # Optional navbar
 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
 links:
