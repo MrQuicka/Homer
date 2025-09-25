@@ -160,10 +160,10 @@ services:
     logo: "fas fa-wifi"
     subtitle: "Monitoring kvality připojení"
     tag: "monitoring"
-    url: "http://192.168.0.208:5000"
+    url: "http://192.168.0.208:5001"
     target: "_blank"
     # Volitelně můžete přidat endpoint pro zobrazení stavu přímo v Homeru
-    endpoint: "http://192.168.0.208:5000/api/status"
+    endpoint: "http://192.168.0.208:5001/api/status"
     type: "Ping"
     # Nebo vlastní endpoint parser:
     method: "GET"
